@@ -32,3 +32,24 @@ document.addEventListener('keydown', function (e) {
     closeModal();
   }
 });
+
+
+//********** 186 ***********//
+
+// adding the elements and removing them from the dom 
+const header = document.querySelector(".header");
+const message = document.createElement("div");
+
+message.classList.add("cookie-message");;
+message.innerHTML = `We use cookies for better functionality and analytics <button class="btn btn--close-cookie"> Got it</button>`
+// header.prepend(message);
+header.append(message);
+
+// header.prepend(message.cloneNode(true));
+
+// header.after(message);
+// header.before(message);
+
+document.querySelector(".btn--close-cookie").addEventListener("click", () => {
+  message.remove();
+});
