@@ -7,6 +7,7 @@ const modal = document.querySelector('.modal');
 const overlay = document.querySelector('.overlay');
 const btnCloseModal = document.querySelector('.btn--close-modal');
 const btnsOpenModal = document.querySelectorAll('.btn--show-modal');
+const btnScrollto = document.querySelector(".btn--scroll-to");
 
 const openModal = function (e) {
   e.preventDefault();
@@ -33,8 +34,13 @@ document.addEventListener('keydown', function (e) {
   }
 });
 
+btnScrollto.addEventListener("click", (e) => {
+  const section1 = document.querySelector(".features");
 
-//********** 186 ***********//
+  section1.scrollIntoView({behavior: "smooth"});
+})
+
+/*
 
 // adding the elements and removing them from the dom 
 const header = document.querySelector(".header");
@@ -53,3 +59,5 @@ header.append(message);
 document.querySelector(".btn--close-cookie").addEventListener("click", () => {
   message.remove();
 });
+
+*/
