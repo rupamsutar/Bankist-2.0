@@ -42,12 +42,24 @@ btnScrollto.addEventListener("click", (e) => {
 
 // page navigation 
 
-document.querySelectorAll(".nav__link").forEach((el) => {
-  el.addEventListener("click", (e) => {
-    e.preventDefault();
-    document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});   
-  });
-})
+//part 1
+// document.querySelectorAll(".nav__link").forEach((el) => {
+//   el.addEventListener("click", (e) => {
+//     e.preventDefault();
+//     document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});   
+//   });
+// })
+
+//part 2
+
+document.querySelector(".nav__links").addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if(e.target.classList.contains("nav__link")) {
+    document.querySelector(e.target.getAttribute("href")).scrollIntoView({behavior: "smooth"});
+  }
+});
+
 
 /*
 
