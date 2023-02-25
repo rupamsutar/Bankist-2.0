@@ -40,6 +40,15 @@ btnScrollto.addEventListener("click", (e) => {
   section1.scrollIntoView({behavior: "smooth"});
 })
 
+// page navigation 
+
+document.querySelectorAll(".nav__link").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    document.querySelector(el.getAttribute("href")).scrollIntoView({behavior: "smooth"});   
+  });
+})
+
 /*
 
 // adding the elements and removing them from the dom 
