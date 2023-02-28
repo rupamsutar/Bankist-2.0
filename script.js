@@ -60,6 +60,30 @@ document.querySelector(".nav__links").addEventListener("click", (e) => {
   }
 });
 
+// TAB NAVIGATION:
+
+const tabs = document.querySelectorAll(".operations__tab");
+const tabsContainer = document.querySelector(".operations__tab-container");
+const tabsContent = document.querySelectorAll(".operations__content");
+
+console.log(tabs);
+
+tabsContainer.addEventListener("click", (e) => {
+ const clicked = e.target.closest(".operations__tab");
+
+//  Guard Clause
+ if(!clicked) return;
+
+ tabs.forEach(t => t.classList.remove("operations__tab--active"));
+ clicked.classList.add("operations__tab--active");
+
+ document.querySelector(`.operations__content--${clicked.dataset.tab}`).classList.add("operations__content--active");
+ console.log(`operations__content--${clicked.dataset.tab}`);
+
+});
+
+
+
 
 /*
 
